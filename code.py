@@ -1,16 +1,38 @@
+X = "X";
+O = "O";
+EMPTY = " ";
+SIzE = 9;
 
-board = [0,1,2,
-         3,4,5,
-         6,7,8]
+turn = "";
+human = "";
+computer = "";
 
-def show():
-    print(board[0],'|',board[1],'|',board[2])
-    print('----------')
-    print(board[3],'|',board[4],'|',board[5])
-    print('----------')
-    print(board[6],'|',board[7],'|',board[8])
-    
-while True:
-    
-    input = input("Select a spot: ")
-    input = int(input)
+def main():
+    if(yes_no"Would you like to go first?") == "y"):
+        human = X;
+        computer = O;
+        turn = human;
+    else:
+        human = O;
+        computer = X;
+        turn = computer;
+        board = [];
+        setup_board(board);
+        showInstructions();
+        isInGame = inGame(board);
+        while (isInGame):
+            takeTurns(turn, board, human, computer);
+            drawBoard(board, human, computer);
+            if(checkWin(board,human, computer) == "human"):
+                print("\n"+win("human))
+                break;
+            elif (checkWin(board, human, computer) == "computer"):
+                print("\n"+win("computer"));
+                break;
+            turn = switchTurn(turn, human, computer);
+            temp = inGame(board);
+            if (temp == "yes"):
+                isInGame - "yes";
+            else:
+                break;
+            return "";
