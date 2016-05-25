@@ -8,7 +8,7 @@ human = "";
 computer = "";
 
 def main():
-    if(yes_no"Would you like to go first?") == "y"):
+    if(yes_no("Would you like to go first?") == "y"):
         human = X;
         computer = O;
         turn = human;
@@ -24,7 +24,7 @@ def main():
             takeTurns(turn, board, human, computer);
             drawBoard(board, human, computer);
             if(checkWin(board,human, computer) == "human"):
-                print("\n"+win("human))
+                print("\n"+win("human"))
                 break;
             elif (checkWin(board, human, computer) == "computer"):
                 print("\n"+win("computer"));
@@ -36,3 +36,8 @@ def main():
             else:
                 break;
             return "";
+def showInstructions():
+    sep = "  |  ";
+    print("\n 0 " + sep + " 1 " + sep + " 2 ");
+    print(" 3 " + sep + " 4 " + sep + " 5 ");
+    print(" 6 " + sep + " 7 " + sep + " 8 \n");
