@@ -122,3 +122,6 @@ def yes_no(q):
     while (i is not "y" and i is not "y" and i is not "N" and i is not "n"):
         i = input("\n" + q + "(y/n)\n");
     return i.lower();
+    
+    main();
+    print("Thank you for playing.");
