@@ -87,3 +87,11 @@ def willWin(space, h, b):
                     if(b[com] == h):
                         return "no";
     return "yes";
+    
+def win(winner):
+    if(winner == "human"):
+        return "You win! Congratulations.";
+    elif(winner == "computer"):
+        return "You lose.";
+    else:
+        return "huh?";
