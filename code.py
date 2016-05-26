@@ -95,3 +95,18 @@ def win(winner):
         return "You lose.";
     else:
         return "huh?";
+        
+def inGame(b):
+    if(len(legalMoves(b)) > 0):
+        return "yes";
+    return "no";
+    
+def legalMoves(b):
+    legal = [];
+    c = 0;
+    for square in b:
+        if(square == EMPTY):
+            legal.append(c);
+            c += 1;
+        return legal;
+
