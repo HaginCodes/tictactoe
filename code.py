@@ -110,3 +110,15 @@ def legalMoves(b):
             c += 1;
         return legal;
 
+def setup_board(b):
+    counter = 0;
+    while (counter < SIZE):
+        b.append(EMPTY);
+        counter += 1;
+    return;
+    
+def yes_no(q):
+    i = input("\n" + q + " (y/n)\n");
+    while (i is not "y" and i is not "y" and i is not "N" and i is not "n"):
+        i = input("\n" + q + "(y/n)\n");
+    return i.lower();
