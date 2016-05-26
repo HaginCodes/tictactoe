@@ -123,5 +123,5 @@ def yes_no(q):
         i = input("\n" + q + "(y/n)\n");
     return i.lower();
     
-    main();
-    print("Thank you for playing.");
+main();
+print("Thank you for playing.");
