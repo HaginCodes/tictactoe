@@ -57,3 +57,33 @@ def drawBoard(b, h, c):
     print(b[3]+sep+b[4]+sep+b[5]);
     print(b[6]+sep+b[7]+sep+b[8]+"\n");
     print("---KEY---\nPlayer - " + h + "\nComputer - " + c);
+
+def switchTUrn(turn, h, c):
+    if( turn == h):
+        return c;
+    else: 
+        return h;
+        
+def takeTurn(t, b, h, c):
+    if (t == h):
+        legal = legalMoves(b);
+        index - int(input("\nWhere would you like to go?\n"));
+        while (indext not in legal):
+            index = int(input("that is not a legal move, please try again. The legal moves are:\n" + str(legal)));
+            b[index] = h;
+        else:
+            legal = legalMoves(b);
+            index = legal[0];
+            print("Computer taking position of: " + str(index));
+            b[index] = c;
+        return;
+        
+def willWin(space, h, b):
+    combinations = ([0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]);
+    for combination in combinations:
+        if(space in combination):
+            for com in combintaion:
+                if(com != space):
+                    if(b[com] == h):
+                        return "no";
+    return "yes";
