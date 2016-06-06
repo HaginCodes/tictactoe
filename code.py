@@ -77,7 +77,7 @@ def takeTurn(t, b, h, c):
         index = legal[0];
         print("Computer taking the position of: " + str(index));
         b[index] = c;
-    return;
+    
 
 def willWin(space, h, b):
     combinations = ([0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6]);
@@ -118,14 +118,15 @@ def setup_board(b):
     while (counter < SIZE):
         b.append(EMPTY);
         counter += 1;
-    return;
- 
- 
+
 def yes_no(q):
     i = input("\n" + q + " (y/n)\n");
     while (i is not "y" and i is not "Y" and i is not "N" and i is not "n"):
         i = input("\n" + q + "(y/n)\n");
     return i.lower();
-
+    
+    
+def ComputerMoves(c):
+     if(board
 main();
 print("Thank you for playing.");
