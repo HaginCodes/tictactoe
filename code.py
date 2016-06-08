@@ -127,6 +127,91 @@ def yes_no(q):
     
     
 def ComputerMoves(c):
-     if(board
+     def decision(mytype):
+	mymove = 10
+	enemytype = "O"
+	if mytype == "O":
+		enemytype = "X"
+	for move in board:
+		if board[move] == mytype:
+			topmove = True
+			bottommove = True
+			leftmove = True
+			rightmove = True
+			if move <= 3:
+				topmove = False
+			if (move - 1) % 3 == 0:
+				leftmove = False
+			if move % 3 == 0:
+				rightmove = False
+			if move >= 7:
+				bottommove = False
+
+			if not bottommove:
+				if board[move - 3] == mytype and not board[move - 6]:
+					mymove = move - 6
+					break
+				elif not leftmove and board[5] == mytype and not board[3]:
+					mymove = 3
+					break
+				elif not rightmove and board[5] == mytype and not board[1]:
+					mymove = 1
+					break
+				elif board[move - 3] == mytype and not board[move - 6]:
+					mymove = move - 6
+					break
+				elif not board[move - 3] and board[move - 6] == mytype:
+					mymove = move - 3
+					break
+				elif not leftmove and board[5] == mytype and not board[3]:
+					mymove = 3
+					break
+				elif not leftmove and not board[5] and board[3] == mytype:
+					mymove = 5
+					break
+				elif not rightmove and board[5] == mytype and not board[1]:
+					mymove = 1
+					break
+				elif not rightmove and not board[5] and board[1] == mytype:
+					mymove = 5
+					break
+			elif not topmove:
+				if board[move + 3] == mytype and not board[move + 6]:
+					mymove = move + 6
+					break
+				elif not board[move + 3] and board[move + 6] == mytype:
+					mymove = move + 3
+					break
+				elif not leftmove and board[5] == mytype and not board[9]:
+					mymove = 9
+					break
+				elif not leftmove and not board[5] and board[9] == mytype:
+					mymove = 5
+					break
+				elif not rightmove and board[5] == mytype and not board[7]:
+					mymove = 7
+					break
+				elif not rightmove and not board[5] and board[7] == mytype:
+					mymove = 5
+					break
+			else:
+				if board[move - 3] == mytype and not board[move + 3]:
+					mymove = move + 3
+					break
+				elif board[move + 3] == mytype and not board[move - 3]:
+					mymove = move - 3
+					break
+				elif not leftmove and board[5] == mytype and not board[6]:
+					mymove = 6
+					break
+				elif not leftmove and not board[5] and board[6] == mytype:
+					mymove = 5
+					break
+				elif not rightmove and board[5] == mytype and not board[4]:
+					mymove = 4
+					break
+				elif not rightmove and not board[5] and board[4] == mytype:
+					mymove = 5
+					break
 main();
 print("Thank you for playing.");
