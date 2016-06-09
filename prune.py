@@ -27,10 +27,13 @@ def main():
     next = []
     while not isFull(curr[0]):
         print("lol")
+        
         for each in curr:
             
+            
             for i,box in enumerate(each):
-              if  box == "":
+                return
+                if  box == "":
                     clone = list(each)
                     clone[i] = token
                     clone[index] = token 
@@ -46,7 +49,9 @@ def main():
         curr = next
         next = []
         print(curr[0],len(curr))
+        return
 
     print(curr)
     
 main()
+print("al done~})")
