@@ -3,12 +3,11 @@ import time
 import random 
 
 #define the board 
-board = [" "," "," "," "," "," "," "," "," "]
+board = [" "," "," "," "," "," "," "," "," "," "]
 
 #define the print_board function 
 def print_header():
-	print("""
-             _____  _  ____     _____  ____  ____     _____  ____  _____
+	print("""_____  _  ____     _____  ____  ____     _____  ____  _____
             /__ __\/ \/   _\   /__ __\/  _ \/   _\   /__ __\/  _ \/  __/    
               / \  | ||  / _____ / \  | / \||  / _____ / \  | / \||  \      
               | |  | ||  \_\____\| |  | |-|||  \_\____\| |  | \_/||  /_     
@@ -41,5 +40,11 @@ while True:
     choice = input("please choose an empty space for X. ")
     choice = int(choice)
     
+    #check to see if space is empty first
+    if board[choice] == " ":
+        board[choice] ="X"
+    else:
+        print("Sorry,that space is not empty!")
+        time.sleep(1)
     board[choice] = "X"
     
