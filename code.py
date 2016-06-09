@@ -69,6 +69,15 @@ while True:
     print_header()
     print_board()
      
+     #check for tie in the board 
+    isFull = True 
+    if " " in board:
+        isFull = False
+        
+    #if board is full do something 
+    if isFull == True:
+        print("Tie!")
+        break
      #get player O  Input
     choice = input("please choose an empty space for O. ")
     choice = int(choice)
@@ -98,11 +107,9 @@ while True:
     
     
     #Check for a tie (when board full)
-    ifFull = True 
-    for index in range(1,10):
-        if board[index] == " ":
-            isFull = False
-            break 
+    isFull = True 
+    if " " in board:
+        isFull = False
         
     #if board is full do something 
     if isFull == True:
