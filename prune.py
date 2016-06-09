@@ -23,9 +23,28 @@ def prune(l):
 def main():
     token = "x"
     curr = [["","","","","","","","",""]]
-    for each in curr:
-        next = [[]]
-        index = firstEmpty(each)
-        each[index] = token 
-        if prune(each):
-            next.append(each)
+    while not isFull(curr[0]):
+        print("lol")
+        for each in curr:
+            next = []
+            for i,box in enumerate(each):
+              if  box == "":
+                  clone 
+                  each[i] = token
+                    each[index] = token 
+                    if prune(each):
+                        next.append(each)
+        if token == "x":
+            token = "o"
+        elif token == "o":
+            token = "x"
+        else:
+            print("whoops")
+        
+        curr = next
+        next = []
+        print(curr[0])
+
+    print(curr)
+    
+main()
