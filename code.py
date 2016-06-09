@@ -37,6 +37,7 @@ while True:
     print_header()
     print_board()
     
+    #Get player X input
     choice = input("please choose an empty space for X. ")
     choice = int(choice)
     
@@ -61,5 +62,33 @@ while True:
         print_header()
         print_board()
         print("X wins! congrats")
+        break
+     
+     
+     #get player O  Input
+    choice = input("please choose an empty space for O. ")
+    choice = int(choice)
+    
+    #check to see if space is empty first
+    if board[choice] == " ":
+        board[choice] ="O"
+    else:
+        print("Sorry,that space is not empty!")
+        time.sleep(1)
+    
+    
+    #check for X win
+    if(board[1] == "O" and board[2] =="O" and board[3] == "O") or\
+       (board[4] == "O" and board[5] =="O" and board[6] == "O")or\
+       (board[7] == "O" and board[8] =="O" and board[9] == "O")or\
+       (board[1] == "O" and board[4] =="O" and board[7] == "O")or\
+       (board[2] == "O" and board[5] =="O" and board[8] == "O")or\
+       (board[3] == "O" and board[6] =="O" and board[9] == "O")or\
+       (board[1] == "O" and board[5] =="O" and board[9] == "O")or\
+       (board[3] == "O" and board[5] =="O" and board[7] == "O"):
+        os.system("clear")
+        print_header()
+        print_board()
+        print("O wins! congrats")
         break
     
