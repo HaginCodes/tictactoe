@@ -32,6 +32,8 @@ def main():
             
             
             for i,box in enumerate(each):
+                print(box)
+                sleep(1)
                 
                 if  box == "":
                     clone = list(each)
