@@ -29,11 +29,11 @@ def main():
             next = []
             for i,box in enumerate(each):
               if  box == "":
-                  clone 
-                  each[i] = token
-                    each[index] = token 
-                    if prune(each):
-                        next.append(each)
+                  clone = list(each)
+                  clone[i] = token
+                    clone[index] = token 
+                    if prune(clone):
+                        next.append(clone)
         if token == "x":
             token = "o"
         elif token == "o":
