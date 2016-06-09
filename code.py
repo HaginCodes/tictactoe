@@ -96,3 +96,15 @@ while True:
         print("O wins! congrats")
         break
     
+    
+    #Check for a tie (when board full)
+    ifFull = True 
+    for index in range(1,10):
+        if board[index] == " ":
+            isFull = False
+            break 
+        
+    #if board is full do something 
+    if isFull == True:
+        print("Tie!")
+        break
