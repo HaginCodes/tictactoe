@@ -23,10 +23,11 @@ def prune(l):
 def main():
     token = "x"
     curr = [["","","","","","","","",""]]
+    next = []
     while not isFull(curr[0]):
         print("lol")
         for each in curr:
-            next = []
+            
             for i,box in enumerate(each):
               if  box == "":
                     clone = list(each)
