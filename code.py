@@ -46,5 +46,13 @@ while True:
     else:
         print("Sorry,that space is not empty!")
         time.sleep(1)
-    board[choice] = "X"
+    
+    
+    #check for X win
+    if(board[1] == "X" and board[2] =="X" and board[3] == "X"):
+        os.system("clear")
+        print_header()
+        print_board()
+        print("X wins! congrats")
+        break
     
