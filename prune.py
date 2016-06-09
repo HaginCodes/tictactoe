@@ -32,10 +32,10 @@ def main():
             
             
             for i,box in enumerate(each):
-                print(box)
-                sleep(1)
+                
                 
                 if  box == "":
+
                     clone = list(each)
                     clone[i] = token
                     clone[i] = token 
@@ -50,7 +50,6 @@ def main():
         
         curr = next
         next = []
-        print(curr[0],len(curr))
         return
 
     print(curr)
