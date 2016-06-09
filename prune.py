@@ -1,3 +1,4 @@
+from time import sleep
 def isFull(l):
     for x in l: 
         if x == "":
