@@ -49,7 +49,14 @@ while True:
     
     
     #check for X win
-    if(board[1] == "X" and board[2] =="X" and board[3] == "X"):
+    if(board[1] == "X" and board[2] =="X" and board[3] == "X") or\
+       (board[4] == "X" and board[5] =="X" and board[6] == "X")or\
+       (board[7] == "X" and board[8] =="X" and board[9] == "X")or\
+       (board[1] == "X" and board[4] =="X" and board[7] == "X")or\
+       (board[2] == "X" and board[5] =="X" and board[8] == "X")or\
+       (board[3] == "X" and board[6] =="X" and board[9] == "X")or\
+       (board[1] == "X" and board[5] =="X" and board[9] == "X")or\
+       (board[3] == "X" and board[5] =="X" and board[7] == "X"):
         os.system("clear")
         print_header()
         print_board()
