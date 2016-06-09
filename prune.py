@@ -29,8 +29,8 @@ def main():
             next = []
             for i,box in enumerate(each):
               if  box == "":
-                  clone = list(each)
-                  clone[i] = token
+                    clone = list(each)
+                    clone[i] = token
                     clone[index] = token 
                     if prune(clone):
                         next.append(clone)
@@ -43,7 +43,7 @@ def main():
         
         curr = next
         next = []
-        print(curr[0])
+        print(curr[0],len(curr))
 
     print(curr)
     
