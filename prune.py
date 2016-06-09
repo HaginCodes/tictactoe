@@ -32,11 +32,11 @@ def main():
             
             
             for i,box in enumerate(each):
-                return
+                
                 if  box == "":
                     clone = list(each)
                     clone[i] = token
-                    clone[index] = token 
+                    clone[i] = token 
                     if prune(clone):
                         next.append(clone)
         if token == "x":
