@@ -65,6 +65,10 @@ while True:
         break
      
      
+    os.system("clear")
+    print_header()
+    print_board()
+     
      #get player O  Input
     choice = input("please choose an empty space for O. ")
     choice = int(choice)
