@@ -64,7 +64,8 @@ def get_computer_move(board, player):
         if board[move] == " ":
             return move
             break
-    
+        
+    return 5
     
 while True:
     os.system("clear")
