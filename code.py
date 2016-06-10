@@ -52,6 +52,12 @@ def is_board_full(board):
         return False
     else:
         return True
+        
+def get computer_move(board, player):
+    move = random.randint(1,9)
+    return move
+    
+    
 while True:
     os.system("clear")
     print_header()
@@ -85,12 +91,9 @@ while True:
     if is_board_full(board):
         print("Tie!")
         break
-        
-    #if board is full do something 
-   
+         
      #get player O  Input
-    choice = input("please choose an empty space for O. ")
-    choice = int(choice)
+    choice = get_computer_move(board, "O")
     
     #check to see if space is empty first
     if board[choice] == " ":
