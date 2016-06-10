@@ -53,9 +53,14 @@ def is_board_full(board):
     else:
         return True
         
-def get computer_move(board, player):
-    move = random.randint(1,9)
-    return move
+def get_computer_move(board, player):
+    
+    #if the center square is empty choose that
+    if board[5] == " ":
+        return 5
+    else:
+        move = random.randint(1,9)
+        return move
     
     
 while True:
