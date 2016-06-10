@@ -58,13 +58,12 @@ def get_computer_move(board, player):
     #if the center square is empty choose that
     if board[5] == " ":
         return 5
-    else:
-        while True:
-            move = random.randint(1,9)
-            # move is blank go and return otherwise try again
-            if board[move] == " ":
-                return move
-                break
+    while True:
+        move = random.randint(1,9)
+        # move is blank go and return otherwise try again
+        if board[move] == " ":
+            return move
+            break
     
     
 while True:
@@ -117,7 +116,7 @@ while True:
         os.system("clear")
         print_header()
         print_board()
-        print("O wins! congrats")
+        print("O wins! مكتبة هناك")
         break
     
 
