@@ -55,6 +55,10 @@ def is_board_full(board):
         
 def get_computer_move(board, player):
     
+    it = play_defense(board, player)
+    if it:
+        return it
+    
     #check colums for a win 
     for i in range(1,10):
         if board[i] == " ":
