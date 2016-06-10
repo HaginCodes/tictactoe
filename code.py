@@ -8,7 +8,7 @@ board = [""," "," "," "," "," "," "," "," "," "]
 #define the print_board function 
 def print_header():
 	print("""
-	     _____  _  ____     _____  ____  ____     _____  ____  _____
+	         _____  _  ____     _____  ____  ____     _____  ____  _____
             /__ __\/ \/   _\   /__ __\/  _ \/   _\   /__ __\/  _ \/  __/    
               / \  | ||  / _____ / \  | / \||  / _____ / \  | / \||  \      
               | |  | ||  \_\____\| |  | |-|||  \_\____\| |  | \_/||  /_     
@@ -33,6 +33,23 @@ def print_board():
     print(" "+board[7]+" | "+board[8]+" | "+board[9]+"  ")
     print("   |   |   ")
     
+    
+def is_x_winnner(board):
+      if(board[1] == "X" and board[2] =="X" and board[3] == "X") or\
+       (board[4] == "X" and board[5] =="X" and board[6] == "X")or\
+       (board[7] == "X" and board[8] =="X" and board[9] == "X")or\
+       (board[1] == "X" and board[4] =="X" and board[7] == "X")or\
+       (board[2] == "X" and board[5] =="X" and board[8] == "X")or\
+       (board[3] == "X" and board[6] =="X" and board[9] == "X")or\
+       (board[1] == "X" and board[5] =="X" and board[9] == "X")or\
+       (board[3] == "X" and board[5] =="X" and board[7] == "X"):
+           return True
+        else:
+            return False
+    
+    
+    
+    
 while True:
     os.system("clear")
     print_header()
@@ -51,14 +68,7 @@ while True:
     
     
     #check for X win
-    if(board[1] == "X" and board[2] =="X" and board[3] == "X") or\
-       (board[4] == "X" and board[5] =="X" and board[6] == "X")or\
-       (board[7] == "X" and board[8] =="X" and board[9] == "X")or\
-       (board[1] == "X" and board[4] =="X" and board[7] == "X")or\
-       (board[2] == "X" and board[5] =="X" and board[8] == "X")or\
-       (board[3] == "X" and board[6] =="X" and board[9] == "X")or\
-       (board[1] == "X" and board[5] =="X" and board[9] == "X")or\
-       (board[3] == "X" and board[5] =="X" and board[7] == "X"):
+    if is_x_winner(board):
         os.system("clear")
         print_header()
         print_board()
