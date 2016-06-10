@@ -47,6 +47,11 @@ def is_winner(board, player):
     else:
         return False
 
+def is_board_full(board):
+    if " " in board:
+        return False
+    else:
+        return True
 while True:
     os.system("clear")
     print_header()
@@ -63,7 +68,6 @@ while True:
         print("Sorry,that space is not empty!")
         time.sleep(1)
     
-    
     #check for X win
     if is_winner(board, "X"):
         os.system("clear")
@@ -72,20 +76,18 @@ while True:
         print("X wins! congrats")
         break
      
-     
     os.system("clear")
     print_header()
     print_board()
      
      #check for tie in the board 
-    isFull = True 
-    if " " in board:
-        isFull = False
-        
-    #if board is full do something 
-    if isFull == True:
+     #if board is full do something 
+    if is_board_full(board):
         print("Tie!")
         break
+        
+    #if board is full do something 
+   
      #get player O  Input
     choice = input("please choose an empty space for O. ")
     choice = int(choice)
@@ -106,13 +108,8 @@ while True:
         print("O wins! congrats")
         break
     
-    
-    #Check for a tie (when board full)
-    isFull = True 
-    if " " in board:
-        isFull = False
-        
+
     #if board is full do something 
-    if isFull == True:
+    if is_board_full(board):
         print("Tie!")
         break
