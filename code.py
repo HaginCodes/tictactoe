@@ -34,19 +34,19 @@ def print_board():
     print("   |   |   ")
     
     
-def is_x_winner(board):
-    if(board[1] == "X" and board[2] =="X" and board[3] == "X") or\
-        (board[4] == "X" and board[5] =="X" and board[6] == "X")or\
-        (board[7] == "X" and board[8] =="X" and board[9] == "X")or\
-        (board[1] == "X" and board[4] =="X" and board[7] == "X")or\
-        (board[2] == "X" and board[5] =="X" and board[8] == "X")or\
-        (board[3] == "X" and board[6] =="X" and board[9] == "X")or\
-        (board[1] == "X" and board[5] =="X" and board[9] == "X")or\
-        (board[3] == "X" and board[5] =="X" and board[7] == "X"):
+def is_winner(board, player):
+    if(board[1] == player and board[2] == player and board[3] == player) or\
+        (board[4] == player and board[5] == player and board[6] == player)or\
+        (board[7] == player and board[8] == player and board[9] == player)or\
+        (board[1] == player and board[4] == player and board[7] == player)or\
+        (board[2] == player and board[5] =+ player and board[8] == player)or\
+        (board[3] == player and board[6] == player and board[9] == player)or\
+        (board[1] == player and board[5] == player and board[9] == player)or\
+        (board[3] == player and board[5] == player and board[7] == player):
         return True
     else:
         return False
-def is_0_winner(board):
+def is_o_winner(board):
     if(board[1] == "O" and board[2] =="O" and board[3] == "O") or\
        (board[4] == "O" and board[5] =="O" and board[6] == "O")or\
        (board[7] == "O" and board[8] =="O" and board[9] == "O")or\
@@ -79,7 +79,7 @@ while True:
     
     
     #check for X win
-    if is_x_winner(board):
+    if is_winner(board, "X"):
         os.system("clear")
         print_header()
         print_board()
