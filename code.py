@@ -75,7 +75,19 @@ def get_computer_move(board, player):
             break
         
     return 5
+
+def play_defense(board, player):
     
+    opp = "O"
+    
+    for i in [1,2,3]:
+        if board[i] == opp and board[i+3] == opp and board[i+6] == " ":
+            return i+6
+        if board[i+3] == opp and board[i+6] == opp and board[i] == " ":
+            return i
+        if board[i] == opp and board[i+6] == opp and board[i+3] == " ":
+            return i+3
+        
 while True:
     os.system("clear")
     print_header()
@@ -119,7 +131,6 @@ while True:
     else:
         print("Sorry,that space is not empty!")
         time.sleep(1)
-    
     
     #check for O win
     if is_winner(board, "O"):
