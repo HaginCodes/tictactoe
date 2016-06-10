@@ -59,8 +59,12 @@ def get_computer_move(board, player):
     if board[5] == " ":
         return 5
     else:
-        move = random.randint(1,9)
-        return move
+        while True:
+            move = random.randint(1,9)
+            # move is blank go and return otherwise try again
+            if board[move] == " ":
+                return move
+                break
     
     
 while True:
