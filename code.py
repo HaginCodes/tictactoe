@@ -54,7 +54,7 @@ def is_board_full(board):
         return True
         
 def get_computer_move(board, player):
-    
+
     it = play_defense(board, player)
     if it:
         return it
@@ -71,6 +71,10 @@ def get_computer_move(board, player):
     #if the center square is empty choose that
     if board[5] == " ":
         return 5
+    else:
+        if board[7] == " ":
+		return 7
+
     while True:
         move = random.randint(1,9)
         # move is blank go and return otherwise try again
@@ -82,15 +86,29 @@ def get_computer_move(board, player):
 
 def play_defense(board, player):
     
-    opp = "O"
-    
+
     for i in [1,2,3]:
-        if board[i] == opp and board[i+3] == opp and board[i+6] == " ":
+        if board[i] == player and board[i+3] == player and board[i+6] == " ":
             return i+6
-        if board[i+3] == opp and board[i+6] == opp and board[i] == " ":
+        if board[i+3] == player and board[i+6] == player and board[i] == " ":
             return i
-        if board[i] == opp and board[i+6] == opp and board[i+3] == " ":
+        if board[i] == player and board[i+6] == player and board[i+3] == " ":
             return i+3
+    
+    if board[1] == player and board[5] == player and board[9] == " ":
+       return 9	
+    if board[5] == player and board[9] == player and board[1] == " ":
+       return 1	
+    if board[9] == player and board[1] == player and board[5] == " ":
+       return 5	
+    
+    if board[3] == player and board[5] == player and board[7] == " ":
+       return 7
+    if board[5] == player and board[7] == player and board[3] == " ":
+       return 3
+    if board[7] == player and board[3] == player and board[5] == " ":
+       return 5
+    
         
 while True:
     os.system("clear")
