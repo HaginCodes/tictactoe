@@ -70,10 +70,11 @@ while True:
                 else:
                     board[i] = " "
        
-        #if the center square is empty choose that
+        #lists for better first moves.
         cornerDefense = [1,3,7,9]
         cornersFull = [1,3,7,9]
         edges = [2,4,6,8]
+        #if center square is empty choose that.
         if board[5] == " ":
             return 5
         elif board[5] == "X":
@@ -81,13 +82,25 @@ while True:
 
         elif cornersFull == player:
             return random.choice(edges)
+        #ultimate human play
+        for i in [1]:
+            if board[i+4] == "O" and board[i+8] == "X" and board[i+4] == "X":
+                return random.choice(cornerDefense)
+            if board[i+4] == "O" and board[i+6] == "X" and board[i+1] == "X":
+                return random.choice(cornerDefense)
+            if board[i+4] == "O" and board[i] == "X" and board[i+5] == "X":
+                return random.choice(cornerDefense)
+            if board[i+4] == "O" and board[i+2] == "X" and board[i+7] == "X":
+                return random.choice(cornerDefense)
 
         while True:
             move = random.randint(1,9)
             # move is blank go and return otherwise try again
             if board[move] == " ":
                 return move
-        
+        """
+        beatable positions are 9,4  7,2  1,6  3,8 must go to availiable corner to block.
+        """
 
     def play_defense(board, player):
         
@@ -121,7 +134,6 @@ while True:
            return 3
         if board[7] == "X" and board[3] == "X" and board[5] == " ":
            return 5
-
                 
     while True:
         os.system("clear")
@@ -129,7 +141,7 @@ while True:
         print_board()
         
         #Get player X input
-        choice = input("please choose an empty space for X. ")
+        choice = input("please choose an empty space for X (YOU ARE X). ")
         choice = int(choice)
         
         #check to see if space is empty first
@@ -175,7 +187,7 @@ while True:
             os.system("clear")
             print_header()
             print_board()
-            print("computer won, you lose مكتبة هناك")
+            print("computer won, you lose :( ")
             break
         
 
